@@ -9,10 +9,22 @@ import Error404 from "./screens/Error404/Error404";
 
 
 
+
 function App() {
+
+  function handleRegister (e){
+    e.preventDefault();
+   }
   return (
+    
     <>
-      <BrowserRouter>
+    
+        <BrowserRouter>
+        
+    <div>
+      <img src="https://media.licdn.com/dms/image/C4E0BAQE81VISLpErpg/company-logo_200_200/0/1630651895782?e=2147483647&v=beta&t=_EaSQSHwMNOiGNwkNbOS78QmhOd7419rrTis2Z4HZKo" alt="Logo de la empresa"  width="350" height="250" />
+    </div>
+    
         <MyNav />
 
         <Routes>
@@ -21,6 +33,32 @@ function App() {
           <Route path="/sobrenosotros" element={<AboutUs />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
+        <div className="main-container">
+      <form className="form-container" action="">
+        {/*email*/}
+
+        <section>
+          <span>Email</span>
+   
+   <input type="Email" />
+   </section>
+
+    {/*contraseña*/}
+
+    <section>
+          <span>Contraseña</span>
+   
+   <input type="Password" />
+        </section>
+        
+    {/*boton enviar*/}
+    <section>
+      <button onClick={e=> handleRegister(e)}>Registrar</button>
+    </section>
+
+      </form>
+
+    </div>
 
         <Footer />
       </BrowserRouter>
