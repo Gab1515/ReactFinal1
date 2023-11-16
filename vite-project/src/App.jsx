@@ -9,11 +9,14 @@ import Error404 from "./screens/Error404/Error404";
 function App() {
   const [input, setInput] = useState({});
 
+  function handleInput(event) {
+  }
+
   function handleRegister(e) {
     e.preventDefault();
     console.log(input);
 
-    fetch("http://localhost:3000/user", {
+    fetch("http://localhost:3001/api/items", { 
       method: "POST",
       body: JSON.stringify(input),
       headers: {
@@ -52,10 +55,14 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Home handleInput={handleInput} handleRegister={handleRegister} />
-            }
+            element={<Home handleInput={handleInput} handleRegister={handleRegister} />}
           />
           <Route path="*" element={<Error404 />} />
+          <Route
+    path="/"
+    element={<Home handleInput={handleInput} handleRegister={handleRegister} />}
+  />
+  <Route path="*" element={<Error404 />} />
         </Routes>
 
         <Footer />

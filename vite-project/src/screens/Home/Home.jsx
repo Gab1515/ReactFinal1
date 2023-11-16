@@ -86,7 +86,7 @@ const Home = ({ handleInput, handleRegister }) => {
             <Form.Check type="checkbox" label="Recordar datos" />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button className="mb-3" variant="primary" type="submit">
             Registrar
           </Button>
         </Form>
